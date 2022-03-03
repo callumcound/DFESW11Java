@@ -1,16 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class Person {
+	
+	//attributes
 	public String name;
 	public int age;
 	public String jobTitle;
+	private List<Pet> pets = new ArrayList<>();
 	
+	
+	//constructors
 	public Person() {
 		
 	}
 	
-	public Person(String name, int age) {
+	
+	public Person(String name, int age, String jobTitle, List<Pet> pets) {
 		this.name = name;
 		this.age = age;
+		this.jobTitle = jobTitle;
+		this.pets = pets;
 	}
 	
 	public Person(String name, int age, String jobTitle) {
@@ -19,15 +29,7 @@ public class Person {
 		this.jobTitle = jobTitle;
 	}
 	
-	//int i = 0; i <= People.size(); i++
-	
-//	String personHunter(String name) {
-//		for(Person person : peopleList) {
-//			if()
-//		}
-//		return name;
-//	}
-	
+	//getters and setters
 	public String getName() {
 		return name;
 	}
@@ -46,12 +48,26 @@ public class Person {
 	public void setJobTitle(String jobTitle) {
 		this.jobTitle = jobTitle;
 	}
+
+	public List<Pet> getPets() {
+		return pets;
+	}
+
+	public void setPets(List<Pet> pets) {
+		this.pets = pets;
+	}
 	@Override
 	public String toString() {
-		return "This Person's name is " + name + "\ntheir age:" + age + "\n and their jobTitle is " + jobTitle + "\n";
+		return "Person: \nname: " + name + "\nage:" + age + "\njobTitle:" + jobTitle + "\n" + pets + "\n";
+	}
+
+	public void addPet(Pet pet) {
+		this.pets.add(pet);
 	}
 	
-	
+	public void removePet(Pet pet) {
+		this.pets.remove(pet);
+	}
 }
 	
 	

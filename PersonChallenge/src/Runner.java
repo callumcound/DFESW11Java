@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
-//NOTE FOR JORDAN, I got stumped at creating a search by Name function :' ) so close yet so far
-
 public class Runner {
 	public static void main(String[] args) {
 		
@@ -15,22 +10,28 @@ public class Runner {
 		Person personSeven = new Person("Beverly", 85, "Model");
 		Person personEight = new Person("Kim", 29, "Brazilian Jiu Jitsu Instructor");
 		
+		Pet petOne = new Pet("Kiev", "Cat");
+		Pet petTwo = new Pet("Shonen", "Dog");
 		
-		ArrayList<Object> peopleList = new ArrayList<>();
 		
-		peopleList.add(personOne);
-		peopleList.add(personTwo);
-		peopleList.add(personThree);
-		peopleList.add(personFour);
-		peopleList.add(personFive);
-		peopleList.add(personSix);
-		peopleList.add(personSeven);
-		peopleList.add(personEight);
+		PersonManager persons = new PersonManager();
+		persons.addPerson(personOne);
+		persons.addPerson(personTwo);
+		persons.addPerson(personThree);
+		persons.addPerson(personFour);
+		persons.addPerson(personFive);
+		persons.addPerson(personSix);
+		persons.addPerson(personSeven);
+		persons.addPerson(personEight);
 		
-//		personHunter("Kev");
 		
-//		System.out.println(peopleList);
-		
+		personOne.addPet(petOne);
+		personSix.addPet(petTwo);
+		persons.printStream();
+//		System.out.println(personSix);
+//		
+//		
+//		
 	}
 
 }
